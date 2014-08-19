@@ -22,13 +22,14 @@ Example:
 Input: Knowledge, Cognitive
 Given this input and a left and a right bound, the search finds all words that meet this critera
 It then returns the word and its position in the file.
-For this example,
+
+In this example,
 
 <----------------------------------[knowledge]--------------------------->
 
 ...Cognitive processes use existing knowledge and generate new knowledge...
 
-  [Cognitive]
+---[Cognitive]------------------------------------------------------------
 
 Cognitive is found 4 words away from knowledge.
 
