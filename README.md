@@ -25,7 +25,9 @@ It then returns the word and its position in the file.
 For this example,
 
 <----------------------------------[knowledge]--------------------------->
+
 ...Cognitive processes use existing knowledge and generate new knowledge...
+
   [Cognitive]
 
 Cognitive is found 4 words away from knowledge.
