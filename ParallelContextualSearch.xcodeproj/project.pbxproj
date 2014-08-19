@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44DA8FBB19A2CB620012B089 /* toolMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DA8FBA19A2CB620012B089 /* toolMain.cpp */; };
 		44DE5A8E199780F300962823 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DE5A8D199780F300962823 /* main.cpp */; };
+		44DE5A971997828900962823 /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DE5A951997828900962823 /* search.cpp */; };
+		44DE5A991997829500962823 /* indexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44DE5A981997829500962823 /* indexer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44DA8FBA19A2CB620012B089 /* toolMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toolMain.cpp; sourceTree = "<group>"; };
 		44DE5A8A199780F300962823 /* ParallelContextualSearch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ParallelContextualSearch; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DE5A8D199780F300962823 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		44DE5A941997824F00962823 /* indexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = indexer.h; sourceTree = "<group>"; };
+		44DE5A951997828900962823 /* search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.cpp; sourceTree = "<group>"; };
+		44DE5A961997828900962823 /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
+		44DE5A981997829500962823 /* indexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = indexer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				44DE5A8D199780F300962823 /* main.cpp */,
+				44DA8FBA19A2CB620012B089 /* toolMain.cpp */,
+				44DE5A951997828900962823 /* search.cpp */,
+				44DE5A961997828900962823 /* search.h */,
+				44DE5A941997824F00962823 /* indexer.h */,
+				44DE5A981997829500962823 /* indexer.cpp */,
 			);
 			path = ParallelContextualSearch;
 			sourceTree = "<group>";
@@ -114,6 +127,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DE5A8E199780F300962823 /* main.cpp in Sources */,
+				44DE5A971997828900962823 /* search.cpp in Sources */,
+				44DA8FBB19A2CB620012B089 /* toolMain.cpp in Sources */,
+				44DE5A991997829500962823 /* indexer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +215,20 @@
 		44DE5A92199780F300962823 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Okemo/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/boost/1.55.0_1/include/,
+				);
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/**";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "/usr/local/Cellar/**";
+				OTHER_LDFLAGS = (
+					"-lboost_system-mt",
+					"-lboost_thread-mt",
+					"-lboost_program_options",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -206,6 +236,17 @@
 		44DE5A93199780F300962823 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Okemo/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/local/Cellar/boost/1.55.0_1/include/**",
+				);
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/**";
+				OTHER_LDFLAGS = (
+					"-lboost_system-mt",
+					"-lboost_thread-mt",
+					"-lboost_program_options",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -229,6 +270,7 @@
 				44DE5A93199780F300962823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
